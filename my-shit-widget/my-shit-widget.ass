@@ -1,0 +1,99 @@
+<?php
+/*
+Plugin Name: A Shit Up Widget
+Plugin URI: http://www.shourav.info/filterPlugin/
+Description: This widget brings in JSON feed and displays.
+Author: Da Moose
+Version: 5.0
+Author URI: http://www.shourav.info/
+
+Copyright 2015  Da Moose
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA 
+*/
+
+class Shit_Widget extends WP_Widget {
+
+
+    function Shit_Widget() {
+
+        $params = array(
+            'description' => 'Display Message',
+            'classname' => 'fuck-widget'
+
+        );
+
+        parent::WP_Widget( 'shit-widget', 'A Fucked Up Widget', $params );
+    }
+
+    function widget( $args, $instance ) {
+        
+    }
+    
+    function form( $instance ) {
+
+        extract($instance);
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
+            <input 
+                class="widefat"
+                id="<?php echo $this->get_field_id('title'); ?>" 
+                name="<?php echo $this->get_field_name('title'); ?>" 
+                value="<?php if ( isset($title) ) echo esc_attr($title); ?>"
+            />
+            
+        </p>
+        <?php 
+    }
+
+   
+}
+
+function shit_register_widget() {
+
+    register_widget( "Shit_Widget" );
+}
+
+add_action( 'widgets_init', 'shit_register_widget' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

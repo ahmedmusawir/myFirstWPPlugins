@@ -1,0 +1,143 @@
+<?php
+// error_reporting(E_ALL);
+/*
+Plugin Name: Da Moose Simple Widget 2.0
+Plugin URI: http://www.shourav.info/filterPlugin/
+Description: This plugin/shorcode brings in JSON feed and displays.
+Author: Da Moose
+Version: 1.0
+Author URI: http://www.shourav.info/
+
+Copyright 2015  Da Moose
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA 
+*/
+
+class Simple_Messanger extends WP_Widget {
+
+    function __construct() {
+
+        parent::__construct(
+
+            'simple-messanger',
+            'Simple Messanger',
+            array(
+                'name' => 'simple-messanger',
+                'description' => 'Hope this works ...'
+            )
+
+        );
+
+        // $params = array(
+        //     'description' => 'Display messages to readers',
+        //     'name' => 'Simple Messanger'
+
+        // );
+
+        // parent::__construct('Simple_Messanger', '', $params);
+
+    }
+
+    public function form( $instance ) {
+
+        extract($instance);
+
+        ?>
+
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
+            <input 
+                class="widefat"
+                id="<?php echo $this->get_field_id('title'); ?>" 
+                name="<?php echo $this->get_field_name('title'); ?>" 
+                value="<?php if ( isset($title) ) echo esc_attr($title); ?>"
+            />
+            
+        </p>
+
+        
+
+        <?php
+
+    }
+
+    public function update( $new_instance, $old_instance ) {
+
+
+    }
+
+    public function widget( $args, $instance) {
+
+
+    }
+}
+
+add_action( 'widgets_init', create_function('', 'register_widget( "Simple_Messanger" );') );
+
+
+// add_action( 'widget_init', 'dm_register_messanger' );
+
+// function dm_register_messanger(){
+
+//     register_widget( 'Simple_Messanger' );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
